@@ -1,0 +1,375 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #4a2c3a;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d946ef;
+    background: linear-gradient(to right, #d946ef, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a2c3a;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d946ef;
+}
+
+
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(253, 242, 248, 1)), url('i.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; 
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #d946ef;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+.content-section {
+    padding: 80px 5%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #4a2c3a;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #d946ef;
+}
+
+.card p {
+    padding: 0 15px 20px;
+    color: #666;
+}
+
+.form-section {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #fdfbfb 0%, #fce7f3 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a2c3a;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #d946ef;
+}
+
+.btn-register {
+    width: 100%;
+    background: #4a2c3a;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Псевдоселектор для смены цвета при наведении */
+.btn
+
+
+ister:hover {
+    background: linear-gradient(45deg, #d946ef, #8b5cf6);
+    color: white;
+    box-shadow: 0 5px 15px rgba(217, 70, 239, 0.4);
+}
+
+.poems-page {
+    padding: 120px 20px 60px; /* Большой отступ сверху, чтобы меню не перекрывало текст */
+    background-color: #fdf2f8;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.poems-page h1 {
+    font-size: 42px;
+    color: #4a2c3a;
+    margin-bottom: 10px;
+}
+
+.poems-page .subtitle {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Стили для карточек со стихами */
+.poems-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.poem-card {
+    background-color: white;
+    border: 2px dashed #d946ef;
+    border-radius: 10px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(217, 70, 239, 0.2);
+    color: #4a2c3a;
+    text-align: left; /* Текст стихов выравниваем по левому краю */
+}
+
+.poem-card h3 {
+    color: #d946ef;
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-align: center; /* Заголовок стиха по центру */
+}
+
+.poem-card p {
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+/* --- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ЗАДАЧ --- */
+
+/* Задача 1: Кнопка локации */
+.btn-location {
+    background-color: #4a2c3a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-location:hover {
+    background-color: #d946ef;
+    transform: translateY(-2px);
+}
+#location-result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-left: 5px solid #d946ef;
+    display: none; /* Скрыто по умолчанию */
+}
+
+/* Задача 2: Анимации */
+/* Класс, который JS будет добавлять при прокрутке для появления элемента */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Анимация для шапки (наверху страницы) */
+@keyframes pulse-gradient {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+.logo {
+    animation: pulse-gradient 3s linear infinite;
+    background-size: 200% auto;
+}
+
+/* Задача 3 и 4: Блоки для вывода данных */
+.data-output {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    text-align: left;
+    border: 1px solid #eee;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #fdf2f8;
+    color: #4a2c3a;
+}
+
+/* Задача 5: Генератор цвета */
+.color-generator-box {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.current-color-display {
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}

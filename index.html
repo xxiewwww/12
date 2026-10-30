@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бараш | Смешарики</title>
+    <!-- Если у тебя есть свой style.css, оставь эту строку. 
+         Но я добавил нужные стили для задач ниже, чтобы всё работало сразу. -->
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* --- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ЗАДАЧ (из предыдущего ответа) --- */
+        .btn-location {
+            background-color: #4a2c3a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-location:hover {
+            background-color: #d946ef;
+            transform: translateY(-2px);
+        }
+        #location-result {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-left: 5px solid #d946ef;
+            display: none;
+            color: #333;
+        }
+
+        /* Анимация появления */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .data-output {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            text-align: left;
+            border: 1px solid #eee;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #fdf2f8; color: #4a2c3a; }
+
+        .color-generator-box {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .current-color-display {
+            height: 100px;
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Бараш</div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О Бараше</a></li>
+                <li><a href="#register">Стать легендой</a></li>
+                <!-- Ссылка на блок с задачами -->
+                <li><a href="#tasks">JS Задания</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ (Твой старый код) -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Привет, я Бараш!</h1>
+            <p>Поэт, философ и просто романтик из страны Смешариков</p>
+            <div class="button-group">
+                <a href="poems.html" class="btn btn-secondary">Читать стихи</a>
+                <button class="btn btn-secondary">Мои друзья</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>Обо мне</h2>
+        <div class="card-container">
+            <div class="card">
+                <!-- Добавь свои картинки или оставь заглушку, если нет файлов -->
+                <img src="1313131.webp" alt="Поэзия" onerror="this.src='https://via.placeholder.com/300x200?text=Poetry'">
+                <h3>Поэт</h3>
+                <p>Я пишу стихи о любви, природе и смысле жизни. Иногда грустные, иногда смешные.</p>
+            </div>
+             <div class="card">
+                <img src="i111.jpg" alt="Гонки" onerror="this.src='https://via.placeholder.com/300x200?text=Racing'">
+                <h3>Гонщик</h3>
+                <p>Порой гоняю со своими друзьями.</p>
+            </div>
+            <div class="card">
+                <img src="1.webp" alt="Философия" onerror="this.src='https://via.placeholder.com/300x200?text=Philosophy'">
+                <h3>Философ</h3>
+                <p>Люблю размышлять о вечном, глядя на закат. Меланхолия — моё второе имя.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="form-section">
+        <div class="form-container">
+            <h2>Стать легендой формулы 1</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Ваше Имя" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Ваш Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Пароль" required>
+                </div>
+                <button type="submit" class="btn btn-register">Регистрация</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- БЛОК С ЗАДАЧАМИ (ВСТАВЛЯЕМ СЮДА)          -->
+    <!-- ========================================== -->
+    <section id="tasks" class="content-section" style="background-color: #fff;">
+        <h2 style="color: #4a2c3a;">санек пинек</h2>
+
+        <!-- ЗАДАЧА 1: ГЕОЛОКАЦИЯ -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #4a2c3a;">Задача 1: Геолокация</h3>
+            <p>Нажми кнопку, чтобы узнать свои координаты.</p>
+            <button class="btn-location" onclick="getLocation()">📍 Показать мою локацию</button>
+            <div id="location-result"></div>
+        </div>
+
+        <!-- ЗАДАЧА 2: АНИМАЦИЯ ПРИ СКРОЛЛЕ -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #4a2c3a;">Задача 2: Анимация</h3>
+            <p>Прокрути страницу вниз, чтобы увидеть плавное появление блоков.</p>
+            <!-- Используем твои стили .card, но добавляем класс анимации -->
+            <div class="card fade-in-up" style="margin-top: 20px;">
+                <img src="https://via.placeholder.com/300x150?text=Scroll+Down" alt="Scroll">
+                <h3>Блок 1</h3>
+                <p>Я появляюсь плавно при прокрутке!</p>
+            </div>
+            <div class="card fade-in-up" style="margin-top: 20px;">
+                <img src="https://via.placeholder.com/300x150?text=Keep+Scrolling" alt="Scroll">
+                <h3>Блок 2</h3>
+                <p>И я тоже! Магия CSS + JS.</p>
+            </div>
+             <!-- Пустой блок, чтобы было куда скроллить -->
+             <div style="height: 600px;"></div>
+        </div>
+
+        <!-- ЗАДАЧА 3: FETCH API -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #4a2c3a;">Задача 3: Fetch API</h3>
+            <p>Загрузка текста из файла <code>fetch_api.txt</code>.</p>
+            <button onclick="loadTextFile()" class="btn btn-primary">📥 Загрузить сообщение</button>
+            <div id="fetch-result" class="data-output"></div>
+        </div>
+
+        <!-- ЗАДАЧА 4: XML ТАБЛИЦА -->
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #4a2c3a;">Задача 4: XML Таблица</h3>
+            <p>Кликни на строку таблицы, чтобы увидеть детали альбома.</p>
+            <table id="cd-table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Исполнитель</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Сюда JS добавит строки -->
+                </tbody>
+            </table>
+            <div id="album-info" class="data-output" style="display:none;"></div>
+        </div>
+
+        <!-- ЗАДАЧА 5: ГЕНЕРАТОР ЦВЕТА -->
+        <div class="color-generator-box">
+            <h3 style="color: #4a2c3a;">Задача 5: Случайный цвет</h3>
+            <p>Меняет фон всей страницы и показывает код цвета.</p>
+            <button onclick="changeRandomColor()" class="btn btn-primary" style="width: 100%;">🌈 Сменить фон</button>
+            <div class="current-color-display" id="color-preview">Нажмите кнопку выше</div>
+            <p id="color-code" style="font-size: 1.2rem; margin-top: 10px;"></p>
+        </div>
+    </section>
+
+<script src="script.js"></script>
+</html>
